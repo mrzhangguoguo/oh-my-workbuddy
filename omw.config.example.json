@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "scope": "user",
+  "profile": "full",
+  "skills": {
+    "enabled": ["*"],
+    "disabled": []
+  },
+  "guidance": {
+    "injectAgentsMd": false
+  }
+}

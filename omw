@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# omw — oh my workbuddy launcher (对标 OMX 的 bin.omx)
+# 直接转发到 Node 实现的命令分派器，无需编译、无第三方依赖。
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec node "${SCRIPT_DIR}/lib/cli.js" "$@"

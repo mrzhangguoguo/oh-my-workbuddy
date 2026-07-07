@@ -1,0 +1,19 @@
+{
+  "name": "oh-my-workbuddy",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "An oh-my-codex-style skill pack for WorkBuddy: catalog-driven skills, dual-scope install, zero runtime.",
+  "bin": {
+    "omw": "omw"
+  },
+  "scripts": {
+    "setup": "node lib/cli.js setup",
+    "doctor": "node lib/cli.js doctor",
+    "list": "node lib/cli.js list",
+    "validate": "node validate_frontmatter.js"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "license": "MIT"
+}

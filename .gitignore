@@ -1,0 +1,14 @@
+# Local install config — do NOT commit your enabled/disabled set or scope.
+omw.config.json
+
+# Runtime artifacts produced when skills run.
+.omw/
+.workbuddy/
+
+# Dependencies installed by contributors for validation.
+node_modules/
+
+# OS / editor noise.
+.DS_Store
+*.log
+*.swp
