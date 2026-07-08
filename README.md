@@ -35,12 +35,20 @@ OMX teardown, and [`docs/design.md`](docs/design.md) for the mapping.
 
 ## Install
 
+### One-liner (skills + hook plugin)
+```bash
+curl -fsSL https://raw.githubusercontent.com/mrzhangguoguo/oh-my-workbuddy/main/install.sh | bash
+```
+Clones to `~/.workbuddy/oh-my-workbuddy`, runs `omw setup` (installs the 46 skills), and registers the hook plugin (skill routing + Bash guardrail). Idempotent — re-run to update. Then **restart WorkBuddy** to activate hooks.
+
+### Manual
 ```bash
 git clone https://github.com/mrzhangguoguo/oh-my-workbuddy.git
 cd oh-my-workbuddy
 chmod +x omw
 cp omw.config.example.json omw.config.json   # then edit scope/profile
 ./omw setup                                   # installs enabled skills
+bash plugin/install.sh                        # registers the hook plugin (optional)
 ```
 
 `omw setup` copies every `active` skill in `catalog/manifest.json` (minus
