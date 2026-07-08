@@ -1,0 +1,8 @@
+{
+  "name": "oh-my-workbuddy-hooks",
+  "version": "0.1.0",
+  "description": "Hook adapter layer for oh-my-workbuddy — deterministic prompt routing, triage, and progress persistence (ports oh-my-codex hooks to WorkBuddy plugin hooks).",
+  "author": { "name": "mrzhangguoguo" },
+  "keywords": ["workbuddy", "oh-my-workbuddy", "hooks", "routing", "oh-my-codex"],
+  "category": "productivity"
+}

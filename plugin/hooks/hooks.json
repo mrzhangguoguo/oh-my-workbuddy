@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/user-prompt-submit.mjs\"" } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"" } ] },
+      { "matcher": "DeferExecuteTool", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"" } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/stop.mjs\"" } ] }
+    ]
+  }
+}
