@@ -6,8 +6,18 @@ Deterministic `UserPromptSubmit` routing layer that turns oh-my-workbuddy into a
 - `src/lib/hook-io.mjs` — stdin/stdout contract + fail-safe wrapper.
 - `src/lib/skill-rules.mjs` — matchSkill logic (keywords + intentPatterns), ported from OMC.
 - `src/hooks/user-prompt-submit.mjs` — entry point, emits `suggestedSkills` as injected context.
-- `src/hooks/{pre-tool-use,stop}.mjs` — entry points (logic TODO, mapped to OMX hooks).
+- `src/hooks/pre-tool-use.mjs` — **Bash destructive-op guardrail** (denies `rm -rf` on personal/system dirs); Agent/DeferExecuteTool passthrough.
+- `src/hooks/stop.mjs` — opt-in progress persistence (`OMW_HOOK_PERSIST=1` appends a session marker to `.workbuddy/memory/YYYY-MM-DD.md`; default no-op).
+- `src/lib/guardrail.mjs` — destructive-op detection.
 - `data/skill-rules.json` — **generated** from `skills/*/SKILL.md` frontmatter triggers, covers all 30 active skills (OMC's covered ~5).
+
+## Install
+```bash
+bash plugin/install.sh      # copies plugin to ~/.workbuddy/plugins/marketplaces/oh-my-workbuddy/,
+                            # registers the local marketplace, enables it in settings.json
+bash plugin/uninstall.sh    # revert (idempotent)
+```
+Then **restart WorkBuddy** to load the hooks. Verified: install/uninstall are idempotent and reversible; the installed `UserPromptSubmit` hook routes correctly (e.g. `analyze`/`team`/`plan` prompts hit the right skill).
 - `hooks/hooks.json` — registers `UserPromptSubmit` / `PreToolUse` / `Stop` (WorkBuddy plugin model, `${CODEBUDDY_PLUGIN_ROOT}` + `timeout`).
 
 ## Attribution

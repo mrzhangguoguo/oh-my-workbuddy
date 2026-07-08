@@ -4,7 +4,8 @@
       { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/user-prompt-submit.mjs\"", "description": "oh-my-workbuddy keyword routing + triage", "timeout": 5 } ] }
     ],
     "PreToolUse": [
-      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy agent/explore overlay", "timeout": 5 } ] },
+      { "matcher": "Bash", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy destructive-op guardrail", "timeout": 5 } ] },
+      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy agent overlay", "timeout": 5 } ] },
       { "matcher": "DeferExecuteTool", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy deferred-tool overlay", "timeout": 5 } ] }
     ],
     "Stop": [

@@ -1,0 +1,13 @@
+{
+  "name": "oh-my-workbuddy",
+  "description": "oh-my-workbuddy local marketplace — 46-skill pack + hook adapter (superset of oh-my-codebuddy's skill layer).",
+  "owner": { "name": "mrzhangguoguo" },
+  "plugins": [
+    {
+      "name": "oh-my-workbuddy-hooks",
+      "description": "Hook adapter: UserPromptSubmit skill routing (30 active skills) + PreToolUse destructive-op guardrail + opt-in Stop persistence.",
+      "version": "0.3.0",
+      "source": "./plugins/oh-my-workbuddy-hooks"
+    }
+  ]
+}
