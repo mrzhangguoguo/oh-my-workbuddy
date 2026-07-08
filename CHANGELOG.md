@@ -2,6 +2,20 @@
 
 All notable changes to oh-my-workbuddy. Versions follow the catalog `catalogVersion` in `catalog/manifest.json`.
 
+## [0.3.0] — 2026-07-08
+
+### Added — P3 hook adapter (integrated from oh-my-codebuddy)
+- `plugin/` — WorkBuddy plugin providing a `UserPromptSubmit` routing hook. The `matchSkill` logic and `skill-rules.json` format are adapted from the official **oh-my-codebuddy** plugin (MIT, CodeBuddy Team), re-registered via the WorkBuddy plugin hook model (`hooks/hooks.json` + `${CODEBUDDY_PLUGIN_ROOT}`).
+- `plugin/src/lib/{hook-io,skill-rules}.mjs` — I/O contract + fail-safe + skill matching.
+- `plugin/src/hooks/{user-prompt-submit,pre-tool-use,stop}.mjs` — entry points.
+- `plugin/data/skill-rules.json` — **generated** from frontmatter triggers; covers all 30 active skills (OMC covered ~5). Drift-guarded by `npm run verify-skill-rules`.
+- `scripts/generate-skill-rules.js` — regenerates the routing table from `skills/*/SKILL.md`.
+- CI now runs `verify-skill-rules` (4 gates: validate / verify-catalog / verify-skill-rules / test).
+- Verified end-to-end: prompts route to the right skill (analyze/team/plan…); no-match passes; fail-safe on bad input.
+
+### Changed
+- `plugin/src/hooks/user-prompt-submit.mjs` switched from the prototype `keyword-router.mjs` (removed) to the OMC-derived `skill-rules.mjs` (richer: keywords + intentPatterns + enforcement + priority).
+
 ## [0.2.0] — 2026-07-08
 
 ### Added

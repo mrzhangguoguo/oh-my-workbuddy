@@ -18,5 +18,7 @@ jobs:
         run: npm run validate
       - name: Catalog drift check
         run: npm run verify-catalog
+      - name: Skill-rules drift check
+        run: npm run verify-skill-rules
       - name: Unit tests
         run: npm test

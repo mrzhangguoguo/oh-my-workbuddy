@@ -1,22 +1,23 @@
 // UserPromptSubmit hook 入口：用户提交 prompt 时跑。
-// port of OMX: keyword-detector + triage + session + prompt-guidance-contract。
+// Integrates OMC's skill-activation-prompt routing (MIT, CodeBuddy Team) into
+// our WorkBuddy plugin hook framework. Routes across all our active skills.
 import { runHook, emitUserPromptOutput } from '../lib/hook-io.mjs';
-import { routeByKeyword } from '../lib/keyword-router.mjs';
+import { suggestSkills } from '../lib/skill-rules.mjs';
 
 function handle(input) {
-  const prompt = typeof input?.prompt === 'string' ? input.prompt : '';
+  const prompt = typeof input?.prompt === 'string' ? input.prompt
+    : (typeof input?.text === 'string' ? input.text
+    : (input?.data?.prompt || ''));
   const sessionId = input?.session_id || '';
+
+  const suggestions = suggestSkills(prompt);
   const parts = [];
-
-  // ① keyword-router：命中 → 注入"应调用 X skill"
-  const hit = routeByKeyword(prompt);
-  if (hit) {
-    parts.push(`[oh-my-workbuddy route] prompt 匹配 skill "${hit}"；在回复前应通过 Skill 工具加载该 skill。`);
+  if (suggestions.length) {
+    const lines = suggestions.map((s) =>
+      `  • ${s.skill} [${s.priority}/${s.enforcement}] — ${s.reason}`);
+    parts.push('[oh-my-workbuddy route] prompt 命中以下 skill，回复前应通过 Skill 工具加载：\n' + lines.join('\n'));
   }
-
-  // ② triage（TODO, P3-c）：估任务规模→注入分流策略
-  // ③ session（TODO, P3-d）：mint/读 session sidecar
-  // ④ prompt-guidance-contract（TODO）：读 AGENTS.md / .workbuddy/memory 注入项目约定
+  // triage / session / prompt-guidance-contract: TODO (P3-c/d)
 
   emitUserPromptOutput({ context: parts.join('\n'), sessionId });
 }

@@ -1,0 +1,472 @@
+{
+  "skills": {
+    "ai-slop-cleaner": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "ai-slop-cleaner",
+          "cleanup",
+          "refactor",
+          "deslop",
+          "ai slop",
+          "clean up this code"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "analyze": {
+      "type": "research",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "analyze",
+          "investigate",
+          "why does",
+          "what's causing",
+          "explain this code"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ask": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "ask",
+          "ask claude",
+          "ask gemini",
+          "ask an advisor",
+          "second opinion",
+          "external review"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "autopilot": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "autopilot",
+          "autonomous",
+          "build me",
+          "create me",
+          "full auto",
+          "handle it all"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "autoresearch": {
+      "type": "research",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "autoresearch",
+          "validator-gated research",
+          "research loop",
+          "keep researching until valid"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "autoresearch-goal": {
+      "type": "research",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "autoresearch-goal",
+          "research goal",
+          "professor critic research",
+          "validated research mission"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "best-practice-research": {
+      "type": "research",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "best-practice-research",
+          "best practice",
+          "recommended approach",
+          "current guidance",
+          "official recommendation",
+          "version-aware guidance"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "cancel": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "cancel",
+          "stop",
+          "abort",
+          "cancel this",
+          "stop the task"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "code-review": {
+      "type": "review",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "code-review",
+          "code review",
+          "review this code",
+          "review my PR",
+          "review changes",
+          "merge readiness"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "configure-notifications": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "configure-notifications",
+          "configure notifications",
+          "setup notifications",
+          "notification settings",
+          "configure discord",
+          "configure telegram",
+          "configure slack",
+          "discord webhook",
+          "telegram bot",
+          "slack webhook"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "deep-interview": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "deep-interview",
+          "deep interview",
+          "interview me",
+          "ask me everything",
+          "don't assume",
+          "clarify requirements",
+          "ouroboros"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "design": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "design",
+          "design direction",
+          "UX guidance",
+          "frontend planning",
+          "design system",
+          "create DESIGN.md",
+          "refresh DESIGN.md"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "doctor": {
+      "type": "infra",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "doctor",
+          "fix skill install",
+          "skill missing",
+          "diagnose oh-my-workbuddy"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "git-master": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "git-master",
+          "git rebase",
+          "atomic commits",
+          "clean git history",
+          "squash commits",
+          "branch strategy"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "hud": {
+      "type": "display",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "hud",
+          "show progress",
+          "what's the status",
+          "where are we"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "omx-setup": {
+      "type": "infra",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "omx-setup",
+          "omx setup",
+          "install skills",
+          "set up oh-my-workbuddy",
+          "refresh skills"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "performance-goal": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "performance-goal",
+          "optimize performance",
+          "reduce latency",
+          "performance goal",
+          "benchmark-driven optimization"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "pipeline": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "pipeline",
+          "run the pipeline",
+          "autopilot pipeline",
+          "sequence stages",
+          "stage orchestrator"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "plan": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "plan",
+          "plan this",
+          "let's plan",
+          "ralplan",
+          "review this plan",
+          "plan --consensus"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "prometheus-strict": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "prometheus-strict",
+          "prometheus strict",
+          "strict plan",
+          "interview-driven plan",
+          "rigorous planning before execution"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ralph": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "ralph",
+          "don't stop",
+          "must complete",
+          "finish this",
+          "keep going until done"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ralplan": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "ralplan",
+          "consensus plan",
+          "plan --consensus"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "skill": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "skill",
+          "skill list",
+          "create a skill",
+          "add skill",
+          "remove skill",
+          "search skills",
+          "skill management"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "team": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "team",
+          "coordinate agents",
+          "parallel execution",
+          "fan out",
+          "spawn teammates",
+          "multi-agent"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ultragoal": {
+      "type": "planning",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "ultragoal",
+          "create-goals",
+          "complete-goals",
+          "durable plan",
+          "multi-goal",
+          "sequential goals"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ultraqa": {
+      "type": "review",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "ultraqa",
+          "adversarial qa",
+          "e2e qa",
+          "hostile scenario testing",
+          "robustness test"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "ultrawork": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "ultrawork",
+          "ulw",
+          "parallel execution",
+          "run tasks in parallel"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "visual-ralph": {
+      "type": "build",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "visual-ralph",
+          "visual ralph",
+          "build UI from reference",
+          "clone website from URL",
+          "pixel-perfect UI",
+          "visual implementation"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "wiki": {
+      "type": "utility",
+      "enforcement": "suggest",
+      "priority": "high",
+      "promptTriggers": {
+        "keywords": [
+          "wiki",
+          "wiki add",
+          "wiki query",
+          "wiki read",
+          "wiki lint",
+          "wiki delete",
+          "project wiki",
+          "add to wiki"
+        ],
+        "intentPatterns": []
+      }
+    },
+    "worker": {
+      "type": "execution",
+      "enforcement": "suggest",
+      "priority": "normal",
+      "promptTriggers": {
+        "keywords": [
+          "worker",
+          "worker protocol",
+          "subagent task lifecycle",
+          "claim task",
+          "team worker"
+        ],
+        "intentPatterns": []
+      }
+    }
+  },
+  "_source": "generated from skills/*/SKILL.md frontmatter triggers"
+}
