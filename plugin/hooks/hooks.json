@@ -1,14 +1,15 @@
 {
   "hooks": {
     "UserPromptSubmit": [
-      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/user-prompt-submit.mjs\"" } ] }
+      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/user-prompt-submit.mjs\"", "description": "oh-my-workbuddy keyword routing + triage", "timeout": 5 } ] }
     ],
     "PreToolUse": [
-      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"" } ] },
-      { "matcher": "DeferExecuteTool", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"" } ] }
+      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy agent/explore overlay", "timeout": 5 } ] },
+      { "matcher": "DeferExecuteTool", "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/pre-tool-use.mjs\"", "description": "oh-my-workbuddy deferred-tool overlay", "timeout": 5 } ] }
     ],
     "Stop": [
-      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/stop.mjs\"" } ] }
+      { "hooks": [ { "type": "command", "command": "node \"${CODEBUDDY_PLUGIN_ROOT}/src/hooks/stop.mjs\"", "description": "oh-my-workbuddy progress persistence", "timeout": 10 } ] }
     ]
   }
 }
+

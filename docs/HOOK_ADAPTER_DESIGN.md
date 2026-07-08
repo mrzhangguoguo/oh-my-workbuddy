@@ -153,3 +153,46 @@ oh-my-workbuddy/
 
 ## 8. 一句话结论
 WorkBuddy 的 hook 系统**足以承载 OMX 的 hook 适配层**——确定性路由、分流、进度落地都能做；分水岭是"本地插件能否加载"（P3-a），先验这个再实现。骨架已就绪，逻辑待填。
+
+---
+
+## 9. P3-a 验证结果（2026-07-08，已完成）
+
+**结论：PASS —— 本地/用户插件可以加载并注册 hook。** 但发现一个**改变项目方向的生态事实**。
+
+### 9.1 技术验证（全通过）
+- **用户插件加载路径确认**：`~/.workbuddy/plugins/marketplaces/<marketplace>/plugins/<name>/`（以及 `external_plugins/`）。marketplace 列表在 `~/.workbuddy/plugins/known_marketplaces.json`（122KB）。
+- **用户插件能带 hooks**：实测 `security-scan` / `ralph-loop` / `hookify` / `oh-my-codebuddy` / `code-simplifier` 等**用户安装**插件（非 builtin）都带 `hooks/hooks.json` 并生效。
+- **hook schema 与我们骨架完全一致**：`hooks.<Event>[].hooks[].{type:"command", command, description?, timeout?}`。我们的骨架用的就是这个结构。✅
+- **新发现 `timeout` 字段**：hook 条目可带 `timeout`（秒），正好满足我们的"hook 必须 <100ms/fast + fail-safe"要求——可加超时兜底。骨架应补上。
+- **启用机制**：`~/.workbuddy/settings.json` 的 `enabledPlugins`，key 格式 `<name>@<marketplace-source>`（builtin 是 `@workbuddy-builtin`，marketplace 是 `@<marketplace-id>`）。
+- **我们的骨架可直接复用**：`hook-io.mjs` 契约正确，只需把 `hooks.json` 的 command 路径放进一个装好的插件目录即可。
+
+### 9.2 生态事实（影响项目定位）⚠️
+**官方 marketplace 已有 `oh-my-codebuddy` (OMC) 插件**（CodeBuddy Team 出品）：
+- 自述："完整的 OMC 插件，包含 agents、commands、skills、hooks、tools、MCP servers"。
+- 规模：**11 skills** + 7 agents + 7 commands + 4 tools + 1 mcp + hooks。
+- 兼容 codebuddy + claude-code。
+- 含 `hooks/skill-activation-prompt.{sh,js}`（= OMX keyword-detector 的官方实现）。
+
+**外加一堆 hook/路由生态插件**：`ralph-loop`（Stop hook 自循环）、`hookify`（hook 框架）、`code-simplifier`、`find-skills`、`hot-skills`、`plugin-finder`、`plugin-dev`。
+
+### 9.3 对 oh-my-workbuddy 的影响
+| 维度 | oh-my-workbuddy（我们） | oh-my-codebuddy（官方） |
+|---|---|---|
+| skills | **46**（全量 OMX 1:1） | 11（精选） |
+| agents | 3 | 7 |
+| commands | 无 | 7 |
+| tools | 无 | 4 |
+| hooks | 骨架（P3 未实现） | 已有（skill-activation-prompt 等） |
+| mcp | 无 | 1 |
+
+**结论**：我们的**差异化是 46 skill 全量层**（OMC 只有 11）。但 P3（自建 hook 层）会**与 OMC + 现成 hook 插件高度重复**。
+
+### 9.4 修正后的建议（取代原 P3-b…f）
+1. **P3 技术可行** —— 不用再验，骨架契约正确。
+2. **但战略上不建议从零自建 hook 层** —— 官方 OMC + hookify/ralph-loop/code-simplifier 已覆盖。
+3. **两条更优路径（二选一）**：
+   - **路径 A（互补定位）**：oh-my-workbuddy 定位为"46 skill 全量包"，文档明确建议用户配 OMC（hooks/agents/commands）+ hookify 一起用，不重复造 hook。
+   - **路径 B（合并/贡献）**：把我们的 46 skill 作为 skill 集贡献进 OMC，或做一个轻量插件只负责"把 46 skill 注入 OMC 的 skill-activation 路由"。
+4. 若仍要自建，最小可行 = 一个插件只挂 `UserPromptSubmit` 的 keyword-router（从我们 manifest 的 triggers 自动生成路由表），其余 hook 用现成插件。
