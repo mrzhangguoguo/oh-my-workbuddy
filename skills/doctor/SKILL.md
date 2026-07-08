@@ -1,5 +1,7 @@
 ---
 name: doctor
+category: infra
+status: active
 description: Diagnose and fix oh-my-workbuddy skill installation issues — missing or duplicate skill roots, stale package versions, broken AGENTS.md/memory. Trigger "doctor", "fix skill install", "why is my skill missing", "diagnose skills".
 agent_created: true
 triggers: ["doctor", "fix skill install", "skill missing", "diagnose oh-my-workbuddy"]

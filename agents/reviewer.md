@@ -1,5 +1,7 @@
 ---
 description: "Independent quality reviewer (STANDARD, READ-ONLY)"
+category: review
+status: active
 argument-hint: "diff or PR description"
 ---
 <identity>

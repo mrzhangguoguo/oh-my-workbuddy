@@ -14,37 +14,39 @@ npm install
 ## 2. The source of truth
 
 A skill lives in `skills/<name>/SKILL.md` (optionally with `references/` files).
-The catalog lives in `catalog/manifest.json` (an array of entries: `name`, `category`, `status`, `core`, `description`).
-The agent definitions live in `agents/*.md` and are also registered in the manifest `agents` array.
+The catalog lives in `catalog/manifest.json` — **it is generated**, do not hand-edit it.
+The sources of truth are: `catalog/meta.json` (top-level `schemaVersion`/`catalogVersion`/`port`) and each skill/agent's frontmatter. Run `npm run generate-catalog` to regenerate the manifest after editing frontmatter.
+The agent definitions live in `agents/*.md` (frontmatter carries `category`/`status`; name = filename).
 
 **Frontmatter is the contract.** Every `SKILL.md` must start with:
 
 ```yaml
 ---
 name: my-skill            # MUST equal the directory name
-description: One-line what it does, with trigger phrases.
+category: execution        # REQUIRED — execution|planning|shortcut|utility|research|review|build|infra|display
+status: active             # REQUIRED — active|alias|merged|deprecated|internal
+description: One-line what it does, with trigger phrases.  # becomes the catalog description
 agent_created: true        # REQUIRED — lets SkillManage own the file
 triggers: ["my skill", "run my-skill"]   # optional, aids routing
+core: true                 # optional, defaults false — marks foundational skills
 ---
 ```
 
 ## 3. Adding a skill
 
-1. Create `skills/<name>/SKILL.md` with the frontmatter above and a body that follows the porting rules in `docs/PORTING_GUIDE.md`.
-2. Register it in `catalog/manifest.json` under `skills`:
-   ```json
-   { "name": "my-skill", "category": "execution", "status": "active", "core": false,
-     "description": "Short catalog description" }
-   ```
-   `category` ∈ `execution|planning|shortcut|utility|research|review|build|infra|display`;
-   `status` ∈ `active|alias|merged|deprecated|internal`.
-3. Run **both** validators (they are the CI gates):
+1. Create `skills/<name>/SKILL.md` from `templates/skill-template/SKILL.md`, filling in `category`/`status`/`description`/`triggers` and a body that follows `docs/PORTING_GUIDE.md`.
+2. Regenerate the manifest:
    ```bash
-   npm run validate        # frontmatter: name/description/agent_created, name==dir
-   npm run verify-catalog  # skills/ dirs  ↔  manifest skills  ↔  agents/ files  (no drift)
+   npm run generate-catalog   # writes catalog/manifest.json from frontmatter
+   ```
+3. Run the gates (CI enforces all three):
+   ```bash
+   npm run validate          # frontmatter: name/description/agent_created/category/status, name==dir
+   npm run verify-catalog    # generate --check: committed manifest must match frontmatter
+   npm test                  # lib/ unit tests
    ```
 4. If the skill has WorkBuddy-native equivalents, prefer WorkBuddy idioms (Skill tool, Agent tool, `TeamCreate`, `SendMessage`, Task tools, `.workbuddy/memory`). Do **not** leave Codex/tmux/`omx` CLI instructions — see the "no OMX-primitive leakage" rule.
-5. Use `templates/skill-template/SKILL.md` as a starting point.
+5. Commit `skills/<name>/SKILL.md` **and** the regenerated `catalog/manifest.json`.
 
 ## 4. Working on `omw`
 

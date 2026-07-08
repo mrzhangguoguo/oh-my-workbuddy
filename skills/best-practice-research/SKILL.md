@@ -1,5 +1,7 @@
 ---
 name: best-practice-research
+category: research
+status: active
 description: Bounded best-practice research using official/upstream evidence first; produces a cited, reusable recommendation and a handoff to planning/execution
 agent_created: true
 triggers: ["best practice", "recommended approach", "current guidance", "official recommendation", "version-aware guidance"]

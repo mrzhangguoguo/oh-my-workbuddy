@@ -1,5 +1,8 @@
 ---
 name: analyze
+category: research
+status: active
+core: true
 description: Run read-only deep repository analysis and return a ranked synthesis with explicit confidence, concrete file references, and clear evidence-vs-inference boundaries. Use when a user says "analyze", "investigate", "why does", "what's causing", or needs grounded cross-file explanation before any changes are proposed.
 agent_created: true
 triggers: ["analyze", "investigate", "why does", "what's causing", "explain this code"]

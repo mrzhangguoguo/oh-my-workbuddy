@@ -1,5 +1,7 @@
 ---
 name: ralph-init
+category: shortcut
+status: deprecated
 description: "Deprecated. Do not invoke. Use ralph directly after PRD/test-spec planning is complete."
 agent_created: true
 triggers: ["ralph-init"]

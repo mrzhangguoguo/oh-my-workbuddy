@@ -1,5 +1,7 @@
 ---
 name: omx-setup
+category: infra
+status: active
 description: Install or refresh the oh-my-workbuddy skill package into user or project scope. Trigger "omx setup", "install skills", "set up oh-my-workbuddy", "refresh skills".
 agent_created: true
 triggers: ["omx setup", "install skills", "set up oh-my-workbuddy", "refresh skills"]

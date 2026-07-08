@@ -1,5 +1,7 @@
 ---
 name: ultrawork
+category: execution
+status: active
 description: 'Parallel execution engine for high-throughput task completion — ground context, set acceptance criteria, fan out independent work via the Agent tool, and close with lightweight evidence. Triggers: "ultrawork", "ulw", "parallel execution", "run tasks in parallel".'
 agent_created: true
 triggers: ["ultrawork", "ulw", "parallel execution", "run tasks in parallel"]

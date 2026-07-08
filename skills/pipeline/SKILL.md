@@ -1,5 +1,8 @@
 ---
 name: pipeline
+category: planning
+status: active
+core: true
 description: "Configurable orchestrator that sequences planning/execution/review stages as ordered WorkBuddy skill invocations with a task-list state and resume support. Use to run a repeatable multi-stage workflow (interview → plan → execute → review → QA). Triggers: 'run the pipeline', 'autopilot pipeline', 'sequence stages', 'stage orchestrator'."
 agent_created: true
 triggers: ["run the pipeline", "autopilot pipeline", "sequence stages", "stage orchestrator"]

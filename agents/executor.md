@@ -1,5 +1,7 @@
 ---
 description: "Autonomous deep executor for goal-oriented implementation (STANDARD)"
+category: build
+status: active
 argument-hint: "task description"
 ---
 <identity>

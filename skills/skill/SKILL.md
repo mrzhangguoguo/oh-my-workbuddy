@@ -1,5 +1,7 @@
 ---
 name: skill
+category: utility
+status: active
 description: Manage local WorkBuddy skills - list, add, remove, search, edit, info, sync, setup. Use for skill authoring and inventory.
 agent_created: true
 triggers: ["skill list", "create a skill", "add skill", "remove skill", "search skills", "skill management"]

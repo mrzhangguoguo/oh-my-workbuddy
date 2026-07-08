@@ -12,8 +12,9 @@
     "doctor": "node lib/cli.js doctor",
     "list": "node lib/cli.js list",
     "validate": "node validate_frontmatter.js",
-    "verify-catalog": "node scripts/verify-catalog.js",
-    "test": "node --test lib/__tests__/*.test.js"
+    "verify-catalog": "node scripts/generate-catalog.js --check",
+    "test": "node --test lib/__tests__/*.test.js",
+    "generate-catalog": "node scripts/generate-catalog.js"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0"

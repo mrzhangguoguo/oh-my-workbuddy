@@ -1,5 +1,7 @@
 ---
 name: build-fix
+category: build
+status: deprecated
 description: Deprecated shim — build failures are now handled inline by the active execution/debugging workflow; do not route here
 agent_created: true
 triggers: ["build fix", "fix build", "build-fix"]

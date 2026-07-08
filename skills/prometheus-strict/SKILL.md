@@ -1,5 +1,7 @@
 ---
 name: prometheus-strict
+category: planning
+status: active
 description: "Clean-room interview-driven planner with three voices (Metis clarifies, Momus challenges, Oracle synthesizes), then hands off to ultragoal/team. Use for rigorous pre-execution planning when ambiguity is risky. Triggers: 'prometheus strict', 'strict plan', 'interview-driven plan', 'rigorous planning before execution'."
 agent_created: true
 triggers: ["prometheus strict", "strict plan", "interview-driven plan", "rigorous planning before execution"]

@@ -1,5 +1,8 @@
 ---
 name: team
+category: execution
+status: active
+core: true
 description: Coordinate N parallel agents on a shared task list using the Agent tool and TeamCreate. Use for multi-lane execution, fan-out, shared delivery+verification, and long-running lanes tracked across a session.
 agent_created: true
 triggers: ["team", "coordinate agents", "parallel execution", "fan out", "spawn teammates", "multi-agent"]

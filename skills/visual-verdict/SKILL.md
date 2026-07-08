@@ -1,5 +1,7 @@
 ---
 name: visual-verdict
+category: review
+status: deprecated
 description: 'Deprecated. Visual verdict scoring is now part of the `visual-ralph` workflow; do not invoke this skill directly. Triggers: "visual verdict", "visual-ralph verdict".'
 agent_created: true
 triggers: ["visual verdict", "visual-ralph verdict"]

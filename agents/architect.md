@@ -1,5 +1,7 @@
 ---
 description: "Strategic architecture & debugging advisor (THOROUGH, READ-ONLY)"
+category: build
+status: active
 argument-hint: "task description"
 ---
 <identity>

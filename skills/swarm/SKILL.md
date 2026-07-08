@@ -1,5 +1,7 @@
 ---
 name: swarm
+category: execution
+status: deprecated
 description: Deprecated compatibility shim for team execution. Use `team` (Agent-tool coordination) instead.
 agent_created: true
 triggers: ["swarm", "swarm mode", "parallel agents"]

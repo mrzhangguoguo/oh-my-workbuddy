@@ -1,5 +1,7 @@
 ---
 name: autoresearch-goal
+category: research
+status: active
 description: Durable professor-critic research workflow bound to a tracked goal, with validation-gated completion. Use when a research mission needs ongoing goal-focused management plus professor/critic-style validation.
 agent_created: true
 triggers: ["autoresearch-goal", "research goal", "professor critic research", "validated research mission"]

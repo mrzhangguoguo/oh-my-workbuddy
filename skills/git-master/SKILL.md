@@ -1,5 +1,8 @@
 ---
 name: git-master
+category: execution
+status: active
+core: true
 description: Git expert for atomic commits, interactive rebasing, branch management, and history cleanup. Trigger "git rebase", "atomic commits", "clean git history", "squash commits", "branch strategy".
 agent_created: true
 triggers: ["git rebase", "atomic commits", "clean git history", "squash commits", "branch strategy"]

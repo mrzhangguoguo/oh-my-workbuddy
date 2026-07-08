@@ -1,5 +1,7 @@
 ---
 name: web-clone
+category: build
+status: deprecated
 description: 'Deprecated. Live-URL website cloning is now handled by the `visual-ralph` skill (visual implementation + visual QA). Do not invoke this skill directly. Triggers: "clone website", "clone this URL", "web clone".'
 agent_created: true
 triggers: ["clone website", "clone this URL", "web clone"]

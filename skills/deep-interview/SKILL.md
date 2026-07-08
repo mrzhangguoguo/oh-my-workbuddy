@@ -1,5 +1,8 @@
 ---
 name: deep-interview
+category: planning
+status: active
+core: true
 description: Socratic deep interview with mathematical ambiguity gating that turns vague ideas into execution-ready specifications before planning or implementation
 agent_created: true
 triggers: ["deep interview", "interview me", "ask me everything", "don't assume", "clarify requirements", "ouroboros"]

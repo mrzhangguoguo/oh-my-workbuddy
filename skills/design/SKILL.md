@@ -1,5 +1,8 @@
 ---
 name: design
+category: planning
+status: active
+core: true
 description: Canonical repo-local DESIGN.md workflow for product, UI/UX, and frontend decision source of truth
 agent_created: true
 triggers: ["design", "design direction", "UX guidance", "frontend planning", "design system", "create DESIGN.md", "refresh DESIGN.md"]

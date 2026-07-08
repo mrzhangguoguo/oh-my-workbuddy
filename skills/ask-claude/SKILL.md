@@ -1,5 +1,7 @@
 ---
 name: ask-claude
+category: utility
+status: deprecated
 description: Deprecated compatibility shim for Claude advisor requests. Use `ask` with the claude backend instead.
 agent_created: true
 triggers: ["ask claude", "claude advisor", "deprecated"]

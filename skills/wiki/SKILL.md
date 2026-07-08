@@ -1,5 +1,8 @@
 ---
 name: wiki
+category: utility
+status: active
+core: true
 description: 'Persistent markdown project wiki with keyword + tag search, lifecycle capture, and cross-references. Triggers: "wiki add", "wiki query", "wiki read", "wiki lint", "wiki delete", "project wiki", "add to wiki".'
 agent_created: true
 triggers: ["wiki add", "wiki query", "wiki read", "wiki lint", "wiki delete", "project wiki", "add to wiki"]

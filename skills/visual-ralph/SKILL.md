@@ -1,5 +1,7 @@
 ---
 name: visual-ralph
+category: build
+status: active
 description: 'Visual frontend delivery loop — build or restyle UI from a generated reference, a static reference, or a live URL, iterating with measured visual-verdict scoring and pixel-diff evidence until the implementation matches and leaves a reproducible design system. Triggers: "visual ralph", "build UI from reference", "clone website from URL", "pixel-perfect UI", "visual implementation".'
 agent_created: true
 triggers: ["visual ralph", "build UI from reference", "clone website from URL", "pixel-perfect UI", "visual implementation"]

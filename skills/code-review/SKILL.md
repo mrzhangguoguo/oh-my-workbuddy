@@ -1,5 +1,8 @@
 ---
 name: code-review
+category: review
+status: active
+core: true
 description: Run a comprehensive, severity-rated code review for quality, security, and maintainability, with a deterministic merge-readiness verdict
 agent_created: true
 triggers: ["code review", "review this code", "review my PR", "review changes", "merge readiness"]

@@ -1,5 +1,8 @@
 ---
 name: ultraqa
+category: review
+status: active
+core: true
 description: Adversarial dynamic end-to-end QA - generate hostile scenarios, test, verify, fix, report, and clean up. Use for robust behavior verification.
 agent_created: true
 triggers: ["ultraqa", "adversarial qa", "e2e qa", "hostile scenario testing", "robustness test"]

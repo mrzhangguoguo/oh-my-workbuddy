@@ -1,5 +1,7 @@
 ---
 name: security-review
+category: review
+status: deprecated
 description: Deprecated standalone security review skill. Use `code-review` when security concerns are in scope.
 agent_created: true
 triggers: ["security review", "security audit", "vulnerability review"]

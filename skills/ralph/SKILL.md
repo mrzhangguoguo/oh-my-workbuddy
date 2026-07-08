@@ -1,5 +1,8 @@
 ---
 name: ralph
+category: execution
+status: active
+core: true
 description: "Self-referential persistence loop that keeps working on a task until it is fully complete and architect-verified, with parallel delegation, automatic retry, and a mandatory verification gate. Use when guaranteed completion matters. Triggers: 'ralph', 'don't stop', 'must complete', 'finish this', 'keep going until done'."
 agent_created: true
 triggers: ["ralph", "don't stop", "must complete", "finish this", "keep going until done"]

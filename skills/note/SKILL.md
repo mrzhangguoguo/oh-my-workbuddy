@@ -1,5 +1,7 @@
 ---
 name: note
+category: shortcut
+status: deprecated
 description: DEPRECATED shim. Use the WorkBuddy memory surface `.workbuddy/memory/YYYY-MM-DD.md` directly when you need to persist notes.
 agent_created: true
 triggers: ["note", "take a note", "save note"]

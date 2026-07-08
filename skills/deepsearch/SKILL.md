@@ -1,5 +1,7 @@
 ---
 name: deepsearch
+category: research
+status: deprecated
 description: Deprecated shim — use the `analyze` skill for deep repository analysis or repo inspection tools (Read/Grep/Glob/Bash) for fast repo-local lookup
 agent_created: true
 triggers: ["deepsearch", "deep search"]

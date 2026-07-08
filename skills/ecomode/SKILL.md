@@ -1,5 +1,7 @@
 ---
 name: ecomode
+category: shortcut
+status: deprecated
 description: DEPRECATED shim — cost-optimized execution modifier. Do not route here; use the `ultrawork` skill for maintained high-throughput parallel execution instead.
 agent_created: true
 triggers: ["ecomode", "eco mode", "cheaper agents"]

@@ -1,5 +1,7 @@
 ---
 name: autoresearch
+category: research
+status: active
 description: Stateful validator-gated research loop that keeps nudging until explicit validation evidence exists. Use when a research output is a bounded deliverable that must pass a script or professor-critic validator, not for ordinary pre-planning docs lookup.
 agent_created: true
 triggers: ["autoresearch", "validator-gated research", "research loop", "keep researching until valid"]

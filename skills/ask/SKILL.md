@@ -1,5 +1,7 @@
 ---
 name: ask
+category: utility
+status: active
 description: Ask a locally installed external advisor CLI (Claude or Gemini) for focused questions, reviews, brainstorming, or second opinions, and capture a reusable artifact. Use when the user wants a Claude/Gemini second opinion, "ask claude", or "ask gemini".
 agent_created: true
 triggers: ["ask claude", "ask gemini", "ask an advisor", "second opinion", "external review"]

@@ -1,5 +1,7 @@
 ---
 name: trace
+category: utility
+status: deprecated
 description: Deprecated trace/runtime-inspection shim. Use normal repo inspection (Read, Grep, Glob, Bash) instead.
 agent_created: true
 triggers: ["trace", "runtime trace", "inspect execution"]

@@ -1,5 +1,8 @@
 ---
 name: ultragoal
+category: planning
+status: active
+core: true
 description: Create and execute durable repo-native multi-goal plans. Break a brief into tracked goals, drive them to verified completion, and steer as findings change.
 agent_created: true
 triggers: ["ultragoal", "create-goals", "complete-goals", "durable plan", "multi-goal", "sequential goals"]

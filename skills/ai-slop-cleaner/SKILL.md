@@ -1,5 +1,7 @@
 ---
 name: ai-slop-cleaner
+category: execution
+status: active
 description: Run a regression-tests-first, smell-by-smell deslop/refactor workflow that preserves behavior and raises signal quality. Use when the user asks to "cleanup", "refactor", "deslop", or when follow-up code has duplicates, dead code, weak boundaries, or fallback-like slop.
 agent_created: true
 triggers: ["cleanup", "refactor", "deslop", "ai slop", "clean up this code"]

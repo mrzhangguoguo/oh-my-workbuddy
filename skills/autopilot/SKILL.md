@@ -1,5 +1,8 @@
 ---
 name: autopilot
+category: planning
+status: active
+core: true
 description: Strict autonomous delivery loop that runs deep-interview, ralplan, ultragoal, code-review, and ultraqa in order with automatic re-planning when gates are not clean. Use on "autopilot", "autonomous", "build me", "create me", "make me", "full auto", "handle it all", or "I want a/an…".
 agent_created: true
 triggers: ["autopilot", "autonomous", "build me", "create me", "full auto", "handle it all"]

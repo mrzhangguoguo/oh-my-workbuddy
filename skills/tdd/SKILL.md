@@ -1,5 +1,7 @@
 ---
 name: tdd
+category: build
+status: deprecated
 description: Deprecated TDD shim. Keep test-first discipline inside the active implementation workflow (folded into `plan`).
 agent_created: true
 triggers: ["tdd", "test driven development", "test first"]

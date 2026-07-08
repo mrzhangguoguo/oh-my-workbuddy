@@ -1,5 +1,7 @@
 ---
 name: worker
+category: execution
+status: active
 description: 'Protocol for a unit of work assigned to a WorkBuddy subagent (Agent tool) — ACK, claim-safe lifecycle, evidence-backed completion, and clean blocking escalation. Triggers: "worker protocol", "subagent task lifecycle", "claim task", "team worker".'
 agent_created: true
 triggers: ["worker protocol", "subagent task lifecycle", "claim task", "team worker"]

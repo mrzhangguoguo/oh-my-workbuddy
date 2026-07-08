@@ -1,5 +1,7 @@
 ---
 name: my-skill
+category: execution
+status: active
 description: One-line summary of what this skill does, including natural trigger phrases. Use when the user says "my-skill", "do X", or needs Y.
 agent_created: true
 triggers: ["my-skill", "do x", "needs y"]

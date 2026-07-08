@@ -1,5 +1,8 @@
 ---
 name: ralplan
+category: planning
+status: active
+core: true
 description: "Alias for plan --consensus. Triggers iterative Planner→Architect→Critic consensus planning with RALPLAN-DR structured deliberation. Use when you want multi-perspective sign-off on a plan before execution. Triggers: 'ralplan', 'consensus plan', 'plan --consensus'."
 agent_created: true
 triggers: ["ralplan", "consensus plan", "plan --consensus"]

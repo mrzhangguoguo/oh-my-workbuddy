@@ -9,56 +9,344 @@
     "guide": "docs/PORTING_GUIDE.md"
   },
   "skills": [
-    { "name": "ai-slop-cleaner", "category": "execution", "status": "active", "core": false, "description": "Regression-tests-first smell-by-smell deslop/refactor workflow preserving behavior" },
-    { "name": "analyze", "category": "research", "status": "active", "core": true, "description": "Read-only deep cross-file analysis with ranked, confidence-labeled evidence-vs-inference synthesis" },
-    { "name": "ask", "category": "utility", "status": "active", "core": false, "description": "Run a local Claude/Gemini advisor CLI and capture a reusable artifact" },
-    { "name": "ask-claude", "category": "utility", "status": "deprecated", "core": false, "description": "Deprecated shim; use the ask skill with the claude backend" },
-    { "name": "ask-gemini", "category": "utility", "status": "deprecated", "core": false, "description": "Deprecated shim; use the ask skill with the gemini backend" },
-    { "name": "autopilot", "category": "planning", "status": "active", "core": true, "description": "Strict autonomous loop: deep-interview -> ralplan -> ultragoal -> code-review -> ultraqa with auto re-planning" },
-    { "name": "autoresearch", "category": "research", "status": "active", "core": false, "description": "Validator-gated stateful research loop that continues until explicit validation evidence exists" },
-    { "name": "autoresearch-goal", "category": "research", "status": "active", "core": false, "description": "Durable professor-critic research workflow bound to a tracked goal with validation-gated completion" },
-    { "name": "best-practice-research", "category": "research", "status": "active", "core": false, "description": "Bounded, cited best-practice research using official/upstream evidence before planning" },
-    { "name": "build-fix", "category": "build", "status": "deprecated", "core": false, "description": "Deprecated shim; build failures handled inline by active execution/debug workflow" },
-    { "name": "cancel", "category": "utility", "status": "active", "core": false, "description": "Abort current WorkBuddy flow: stop agents/processes, clear task list, yield control" },
-    { "name": "code-review", "category": "review", "status": "active", "core": true, "description": "Two-lane severity-rated code review with deterministic merge-readiness verdict" },
-    { "name": "configure-notifications", "category": "utility", "status": "active", "core": false, "description": "Configure Discord/Telegram/Slack/webhook notifications via .workbuddy/notifications.json" },
-    { "name": "deep-interview", "category": "planning", "status": "active", "core": true, "description": "Socratic ambiguity-gated interview that turns vague ideas into execution-ready specs" },
-    { "name": "deepsearch", "category": "research", "status": "deprecated", "core": false, "description": "Deprecated shim; use analyze skill or repo inspection tools for repo analysis" },
-    { "name": "design", "category": "planning", "status": "active", "core": true, "description": "Maintain repo-local DESIGN.md as the durable product/UI/UX design source of truth" },
-    { "name": "doctor", "category": "infra", "status": "active", "core": false, "description": "Diagnose/fix oh-my-workbuddy install: skill roots, dup/legacy paths, npm version, AGENTS.md/memory" },
-    { "name": "ecomode", "category": "shortcut", "status": "deprecated", "core": false, "description": "Cost-optimized exec modifier; use ultrawork instead" },
-    { "name": "frontend-ui-ux", "category": "shortcut", "status": "deprecated", "core": false, "description": "Frontend UI/UX shim; use design or visual-ralph instead" },
-    { "name": "git-master", "category": "execution", "status": "active", "core": true, "description": "Git expert: atomic commits, interactive rebase, branch mgmt, history cleanup, style detection" },
-    { "name": "help", "category": "shortcut", "status": "deprecated", "core": false, "description": "Help shim; use omx-setup (install) and doctor (troubleshoot) instead" },
-    { "name": "hud", "category": "display", "status": "active", "core": false, "description": "Inspect live progress via the task list and .workbuddy/memory (replaces omx hud/statusline)" },
-    { "name": "note", "category": "shortcut", "status": "deprecated", "core": false, "description": "Note shim; persist via .workbuddy/memory/YYYY-MM-DD.md instead" },
-    { "name": "omx-setup", "category": "infra", "status": "active", "core": false, "description": "Install/refresh oh-my-workbuddy skills to ~/.workbuddy/skills or .workbuddy/skills" },
-    { "name": "performance-goal", "category": "execution", "status": "active", "core": false, "description": "Evaluator-gated performance optimization loop with durable .omw artifacts and a pass/fail completion gate" },
-    { "name": "pipeline", "category": "planning", "status": "active", "core": true, "description": "Configurable stage orchestrator sequencing skills (interview->plan->execute->review->QA) via task-list state" },
-    { "name": "plan", "category": "planning", "status": "active", "core": true, "description": "Strategic planning with interview, consensus (Planner->Architect->Critic), and review modes" },
-    { "name": "prometheus-strict", "category": "planning", "status": "active", "core": false, "description": "Clean-room interview-driven planner: Metis clarifies, Momus challenges, Oracle synthesizes, then hands off" },
-    { "name": "ralph", "category": "execution", "status": "active", "core": true, "description": "Persistence loop that works until completion with parallel delegation and mandatory architect verification" },
-    { "name": "ralph-init", "category": "shortcut", "status": "deprecated", "core": false, "description": "Deprecated shim; use ralph directly after PRD/test-spec planning" },
-    { "name": "ralplan", "category": "planning", "status": "active", "core": true, "description": "Alias for plan --consensus: iterative Planner->Architect->Critic consensus with RALPLAN-DR" },
-    { "name": "review", "category": "review", "status": "deprecated", "core": false, "description": "Deprecated shim; use code-review or plan --review instead" },
-    { "name": "security-review", "category": "review", "status": "deprecated", "core": false, "description": "standalone security review; use code-review when security concerns are in scope" },
-    { "name": "skill", "category": "utility", "status": "active", "core": false, "description": "manage local WorkBuddy skills (list, add, remove, search, edit, info, sync, setup)" },
-    { "name": "swarm", "category": "execution", "status": "deprecated", "core": false, "description": "compatibility shim for team execution; use team (Agent-tool coordination) instead" },
-    { "name": "tdd", "category": "build", "status": "deprecated", "core": false, "description": "TDD shim; keep test-first discipline inside the active implementation workflow" },
-    { "name": "team", "category": "execution", "status": "active", "core": true, "description": "coordinate N parallel agents on a shared task list via the Agent tool" },
-    { "name": "trace", "category": "utility", "status": "deprecated", "core": false, "description": "trace/runtime-inspection shim; use normal repo inspection (Read/Grep/Glob/Bash)" },
-    { "name": "ultragoal", "category": "planning", "status": "active", "core": true, "description": "durable repo-native multi-goal planning with tracked goals, ledger, and steering" },
-    { "name": "ultraqa", "category": "review", "status": "active", "core": true, "description": "adversarial dynamic e2e QA with hostile scenarios, harnesses, and structured evidence report" },
-    { "name": "ultrawork", "category": "execution", "status": "active", "core": false, "description": "Parallel execution engine: ground context, set acceptance criteria, fan out independent work via the Agent tool, close with lightweight evidence" },
-    { "name": "visual-ralph", "category": "build", "status": "active", "core": false, "description": "Measured frontend delivery loop from reference/URL with visual-verdict scoring, pixel diff, and a reproducible design system" },
-    { "name": "visual-verdict", "category": "review", "status": "deprecated", "core": false, "description": "Deprecated; visual verdict scoring is now part of the visual-ralph workflow" },
-    { "name": "web-clone", "category": "build", "status": "deprecated", "core": false, "description": "Deprecated; live-URL website cloning is now handled by visual-ralph" },
-    { "name": "wiki", "category": "utility", "status": "active", "core": true, "description": "Persistent markdown project wiki with keyword/tag search, lifecycle capture, and [[cross-references]]" },
-    { "name": "worker", "category": "execution", "status": "active", "core": false, "description": "Subagent (Agent tool) task-lifecycle protocol: ACK, claim-safe lifecycle, evidence-backed completion, blocking escalation" }
+    {
+      "name": "ai-slop-cleaner",
+      "category": "execution",
+      "status": "active",
+      "core": false,
+      "description": "Run a regression-tests-first, smell-by-smell deslop/refactor workflow that preserves behavior and raises signal quality. Use when the user asks to \"cleanup\", \"refactor\", \"deslop\", or when follow-up code has duplicates, dead code, weak boundaries, or fallback-like slop."
+    },
+    {
+      "name": "analyze",
+      "category": "research",
+      "status": "active",
+      "core": true,
+      "description": "Run read-only deep repository analysis and return a ranked synthesis with explicit confidence, concrete file references, and clear evidence-vs-inference boundaries. Use when a user says \"analyze\", \"investigate\", \"why does\", \"what's causing\", or needs grounded cross-file explanation before any changes are proposed."
+    },
+    {
+      "name": "ask",
+      "category": "utility",
+      "status": "active",
+      "core": false,
+      "description": "Ask a locally installed external advisor CLI (Claude or Gemini) for focused questions, reviews, brainstorming, or second opinions, and capture a reusable artifact. Use when the user wants a Claude/Gemini second opinion, \"ask claude\", or \"ask gemini\"."
+    },
+    {
+      "name": "ask-claude",
+      "category": "utility",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated compatibility shim for Claude advisor requests. Use `ask` with the claude backend instead."
+    },
+    {
+      "name": "ask-gemini",
+      "category": "utility",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated compatibility shim for Gemini advisor requests. Use `ask` with the gemini backend instead."
+    },
+    {
+      "name": "autopilot",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Strict autonomous delivery loop that runs deep-interview, ralplan, ultragoal, code-review, and ultraqa in order with automatic re-planning when gates are not clean. Use on \"autopilot\", \"autonomous\", \"build me\", \"create me\", \"make me\", \"full auto\", \"handle it all\", or \"I want a/an…\"."
+    },
+    {
+      "name": "autoresearch",
+      "category": "research",
+      "status": "active",
+      "core": false,
+      "description": "Stateful validator-gated research loop that keeps nudging until explicit validation evidence exists. Use when a research output is a bounded deliverable that must pass a script or professor-critic validator, not for ordinary pre-planning docs lookup."
+    },
+    {
+      "name": "autoresearch-goal",
+      "category": "research",
+      "status": "active",
+      "core": false,
+      "description": "Durable professor-critic research workflow bound to a tracked goal, with validation-gated completion. Use when a research mission needs ongoing goal-focused management plus professor/critic-style validation."
+    },
+    {
+      "name": "best-practice-research",
+      "category": "research",
+      "status": "active",
+      "core": false,
+      "description": "Bounded best-practice research using official/upstream evidence first; produces a cited, reusable recommendation and a handoff to planning/execution"
+    },
+    {
+      "name": "build-fix",
+      "category": "build",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated shim — build failures are now handled inline by the active execution/debugging workflow; do not route here"
+    },
+    {
+      "name": "cancel",
+      "category": "utility",
+      "status": "active",
+      "core": false,
+      "description": "Abort the current WorkBuddy workflow — stop background agents/processes, clear in-progress tasks, and hand back control to the user"
+    },
+    {
+      "name": "code-review",
+      "category": "review",
+      "status": "active",
+      "core": true,
+      "description": "Run a comprehensive, severity-rated code review for quality, security, and maintainability, with a deterministic merge-readiness verdict"
+    },
+    {
+      "name": "configure-notifications",
+      "category": "utility",
+      "status": "active",
+      "core": false,
+      "description": "Configure session notifications (Discord/Telegram/Slack webhooks or custom commands) by writing a WorkBuddy-native notifications config file"
+    },
+    {
+      "name": "deep-interview",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Socratic deep interview with mathematical ambiguity gating that turns vague ideas into execution-ready specifications before planning or implementation"
+    },
+    {
+      "name": "deepsearch",
+      "category": "research",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated shim — use the `analyze` skill for deep repository analysis or repo inspection tools (Read/Grep/Glob/Bash) for fast repo-local lookup"
+    },
+    {
+      "name": "design",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Canonical repo-local DESIGN.md workflow for product, UI/UX, and frontend decision source of truth"
+    },
+    {
+      "name": "doctor",
+      "category": "infra",
+      "status": "active",
+      "core": false,
+      "description": "Diagnose and fix oh-my-workbuddy skill installation issues — missing or duplicate skill roots, stale package versions, broken AGENTS.md/memory. Trigger \"doctor\", \"fix skill install\", \"why is my skill missing\", \"diagnose skills\"."
+    },
+    {
+      "name": "ecomode",
+      "category": "shortcut",
+      "status": "deprecated",
+      "core": false,
+      "description": "DEPRECATED shim — cost-optimized execution modifier. Do not route here; use the `ultrawork` skill for maintained high-throughput parallel execution instead."
+    },
+    {
+      "name": "frontend-ui-ux",
+      "category": "shortcut",
+      "status": "deprecated",
+      "core": false,
+      "description": "DEPRECATED compatibility shim for frontend UI/UX work. Do not route here; use the `design` skill for design/UX context or `visual-ralph` for measured visual implementation."
+    },
+    {
+      "name": "git-master",
+      "category": "execution",
+      "status": "active",
+      "core": true,
+      "description": "Git expert for atomic commits, interactive rebasing, branch management, and history cleanup. Trigger \"git rebase\", \"atomic commits\", \"clean git history\", \"squash commits\", \"branch strategy\"."
+    },
+    {
+      "name": "help",
+      "category": "shortcut",
+      "status": "deprecated",
+      "core": false,
+      "description": "DEPRECATED shim. Use the `omx-setup` skill for install/setup and the `doctor` skill for troubleshooting instead."
+    },
+    {
+      "name": "hud",
+      "category": "display",
+      "status": "active",
+      "core": false,
+      "description": "Inspect live progress of long-running or multi-step work. WorkBuddy has a built-in status display; this skill explains how to read progress via the task list and memory. Trigger \"show progress\", \"what's the status\", \"hud\", \"where are we\"."
+    },
+    {
+      "name": "note",
+      "category": "shortcut",
+      "status": "deprecated",
+      "core": false,
+      "description": "DEPRECATED shim. Use the WorkBuddy memory surface `.workbuddy/memory/YYYY-MM-DD.md` directly when you need to persist notes."
+    },
+    {
+      "name": "omx-setup",
+      "category": "infra",
+      "status": "active",
+      "core": false,
+      "description": "Install or refresh the oh-my-workbuddy skill package into user or project scope. Trigger \"omx setup\", \"install skills\", \"set up oh-my-workbuddy\", \"refresh skills\"."
+    },
+    {
+      "name": "performance-goal",
+      "category": "execution",
+      "status": "active",
+      "core": false,
+      "description": "Run an evaluator-gated performance optimization loop with durable WorkBuddy artifacts and safe handoffs. Use when the user wants measurable performance/optimization work (latency, throughput, memory) driven by a pass/fail benchmark rather than a one-off review. Triggers: 'optimize performance', 'reduce latency', 'performance goal', 'benchmark-driven optimization'."
+    },
+    {
+      "name": "pipeline",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Configurable orchestrator that sequences planning/execution/review stages as ordered WorkBuddy skill invocations with a task-list state and resume support. Use to run a repeatable multi-stage workflow (interview → plan → execute → review → QA). Triggers: 'run the pipeline', 'autopilot pipeline', 'sequence stages', 'stage orchestrator'."
+    },
+    {
+      "name": "plan",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Strategic planning with optional interview, consensus (Planner→Architect→Critic), and review modes. Use to scope vague ideas, produce quality-gated work plans, or review an existing plan before implementation. Triggers: 'plan this', 'let's plan', 'ralplan', 'review this plan', 'plan --consensus', 'plan --review'."
+    },
+    {
+      "name": "prometheus-strict",
+      "category": "planning",
+      "status": "active",
+      "core": false,
+      "description": "Clean-room interview-driven planner with three voices (Metis clarifies, Momus challenges, Oracle synthesizes), then hands off to ultragoal/team. Use for rigorous pre-execution planning when ambiguity is risky. Triggers: 'prometheus strict', 'strict plan', 'interview-driven plan', 'rigorous planning before execution'."
+    },
+    {
+      "name": "ralph",
+      "category": "execution",
+      "status": "active",
+      "core": true,
+      "description": "Self-referential persistence loop that keeps working on a task until it is fully complete and architect-verified, with parallel delegation, automatic retry, and a mandatory verification gate. Use when guaranteed completion matters. Triggers: 'ralph', 'don't stop', 'must complete', 'finish this', 'keep going until done'."
+    },
+    {
+      "name": "ralph-init",
+      "category": "shortcut",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated. Do not invoke. Use ralph directly after PRD/test-spec planning is complete."
+    },
+    {
+      "name": "ralplan",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Alias for plan --consensus. Triggers iterative Planner→Architect→Critic consensus planning with RALPLAN-DR structured deliberation. Use when you want multi-perspective sign-off on a plan before execution. Triggers: 'ralplan', 'consensus plan', 'plan --consensus'."
+    },
+    {
+      "name": "review",
+      "category": "review",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated. Do not invoke. Use code-review directly for implementation review, or plan --review only when reviewing an existing planning artifact."
+    },
+    {
+      "name": "security-review",
+      "category": "review",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated standalone security review skill. Use `code-review` when security concerns are in scope."
+    },
+    {
+      "name": "skill",
+      "category": "utility",
+      "status": "active",
+      "core": false,
+      "description": "Manage local WorkBuddy skills - list, add, remove, search, edit, info, sync, setup. Use for skill authoring and inventory."
+    },
+    {
+      "name": "swarm",
+      "category": "execution",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated compatibility shim for team execution. Use `team` (Agent-tool coordination) instead."
+    },
+    {
+      "name": "tdd",
+      "category": "build",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated TDD shim. Keep test-first discipline inside the active implementation workflow (folded into `plan`)."
+    },
+    {
+      "name": "team",
+      "category": "execution",
+      "status": "active",
+      "core": true,
+      "description": "Coordinate N parallel agents on a shared task list using the Agent tool and TeamCreate. Use for multi-lane execution, fan-out, shared delivery+verification, and long-running lanes tracked across a session."
+    },
+    {
+      "name": "trace",
+      "category": "utility",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated trace/runtime-inspection shim. Use normal repo inspection (Read, Grep, Glob, Bash) instead."
+    },
+    {
+      "name": "ultragoal",
+      "category": "planning",
+      "status": "active",
+      "core": true,
+      "description": "Create and execute durable repo-native multi-goal plans. Break a brief into tracked goals, drive them to verified completion, and steer as findings change."
+    },
+    {
+      "name": "ultraqa",
+      "category": "review",
+      "status": "active",
+      "core": true,
+      "description": "Adversarial dynamic end-to-end QA - generate hostile scenarios, test, verify, fix, report, and clean up. Use for robust behavior verification."
+    },
+    {
+      "name": "ultrawork",
+      "category": "execution",
+      "status": "active",
+      "core": false,
+      "description": "Parallel execution engine for high-throughput task completion — ground context, set acceptance criteria, fan out independent work via the Agent tool, and close with lightweight evidence. Triggers: \"ultrawork\", \"ulw\", \"parallel execution\", \"run tasks in parallel\"."
+    },
+    {
+      "name": "visual-ralph",
+      "category": "build",
+      "status": "active",
+      "core": false,
+      "description": "Visual frontend delivery loop — build or restyle UI from a generated reference, a static reference, or a live URL, iterating with measured visual-verdict scoring and pixel-diff evidence until the implementation matches and leaves a reproducible design system. Triggers: \"visual ralph\", \"build UI from reference\", \"clone website from URL\", \"pixel-perfect UI\", \"visual implementation\"."
+    },
+    {
+      "name": "visual-verdict",
+      "category": "review",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated. Visual verdict scoring is now part of the `visual-ralph` workflow; do not invoke this skill directly. Triggers: \"visual verdict\", \"visual-ralph verdict\"."
+    },
+    {
+      "name": "web-clone",
+      "category": "build",
+      "status": "deprecated",
+      "core": false,
+      "description": "Deprecated. Live-URL website cloning is now handled by the `visual-ralph` skill (visual implementation + visual QA). Do not invoke this skill directly. Triggers: \"clone website\", \"clone this URL\", \"web clone\"."
+    },
+    {
+      "name": "wiki",
+      "category": "utility",
+      "status": "active",
+      "core": true,
+      "description": "Persistent markdown project wiki with keyword + tag search, lifecycle capture, and cross-references. Triggers: \"wiki add\", \"wiki query\", \"wiki read\", \"wiki lint\", \"wiki delete\", \"project wiki\", \"add to wiki\"."
+    },
+    {
+      "name": "worker",
+      "category": "execution",
+      "status": "active",
+      "core": false,
+      "description": "Protocol for a unit of work assigned to a WorkBuddy subagent (Agent tool) — ACK, claim-safe lifecycle, evidence-backed completion, and clean blocking escalation. Triggers: \"worker protocol\", \"subagent task lifecycle\", \"claim task\", \"team worker\"."
+    }
   ],
   "agents": [
-    { "name": "executor", "category": "build", "status": "active" },
-    { "name": "architect", "category": "build", "status": "active" },
-    { "name": "reviewer", "category": "review", "status": "active" }
+    {
+      "name": "architect",
+      "category": "build",
+      "status": "active"
+    },
+    {
+      "name": "executor",
+      "category": "build",
+      "status": "active"
+    },
+    {
+      "name": "reviewer",
+      "category": "review",
+      "status": "active"
+    }
   ]
 }

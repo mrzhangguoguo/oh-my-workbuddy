@@ -1,5 +1,7 @@
 ---
 name: cancel
+category: utility
+status: active
 description: Abort the current WorkBuddy workflow — stop background agents/processes, clear in-progress tasks, and hand back control to the user
 agent_created: true
 triggers: ["cancel", "stop", "abort", "cancel this", "stop the task"]

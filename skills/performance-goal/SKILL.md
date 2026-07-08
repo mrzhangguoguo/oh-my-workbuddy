@@ -1,5 +1,7 @@
 ---
 name: performance-goal
+category: execution
+status: active
 description: "Run an evaluator-gated performance optimization loop with durable WorkBuddy artifacts and safe handoffs. Use when the user wants measurable performance/optimization work (latency, throughput, memory) driven by a pass/fail benchmark rather than a one-off review. Triggers: 'optimize performance', 'reduce latency', 'performance goal', 'benchmark-driven optimization'."
 agent_created: true
 triggers: ["optimize performance", "reduce latency", "performance goal", "benchmark-driven optimization"]

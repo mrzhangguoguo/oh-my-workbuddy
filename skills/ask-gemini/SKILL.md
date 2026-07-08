@@ -1,5 +1,7 @@
 ---
 name: ask-gemini
+category: utility
+status: deprecated
 description: Deprecated compatibility shim for Gemini advisor requests. Use `ask` with the gemini backend instead.
 agent_created: true
 triggers: ["ask gemini", "gemini advisor", "deprecated"]

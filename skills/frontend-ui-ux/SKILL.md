@@ -1,5 +1,7 @@
 ---
 name: frontend-ui-ux
+category: shortcut
+status: deprecated
 description: DEPRECATED compatibility shim for frontend UI/UX work. Do not route here; use the `design` skill for design/UX context or `visual-ralph` for measured visual implementation.
 agent_created: true
 triggers: ["frontend ui ux", "frontend design", "ui ux"]

@@ -28,6 +28,8 @@ for (const name of dirs) {
   if (typeof fm.name !== 'string' || !fm.name.trim()) missing.push('name');
   if (typeof fm.description !== 'string' || !fm.description.trim()) missing.push('description');
   if (fm.agent_created !== true) missing.push('agent_created');
+  if (typeof fm.category !== 'string' || !fm.category.trim()) missing.push('category');
+  if (typeof fm.status !== 'string' || !fm.status.trim()) missing.push('status');
   if (missing.length) { errors.push(`${name}: missing/invalid [${missing.join(',')}]`); bad++; continue; }
   if (fm.name !== name) { errors.push(`${name}: frontmatter name "${fm.name}" != dir`); bad++; continue; }
   ok++;

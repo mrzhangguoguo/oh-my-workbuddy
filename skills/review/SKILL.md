@@ -1,5 +1,7 @@
 ---
 name: review
+category: review
+status: deprecated
 description: "Deprecated. Do not invoke. Use code-review directly for implementation review, or plan --review only when reviewing an existing planning artifact."
 agent_created: true
 triggers: ["review"]

@@ -1,5 +1,7 @@
 ---
 name: help
+category: shortcut
+status: deprecated
 description: DEPRECATED shim. Use the `omx-setup` skill for install/setup and the `doctor` skill for troubleshooting instead.
 agent_created: true
 triggers: ["help", "how to install", "troubleshoot skills"]

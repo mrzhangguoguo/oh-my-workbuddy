@@ -1,5 +1,7 @@
 ---
 name: configure-notifications
+category: utility
+status: active
 description: Configure session notifications (Discord/Telegram/Slack webhooks or custom commands) by writing a WorkBuddy-native notifications config file
 agent_created: true
 triggers: ["configure notifications", "setup notifications", "notification settings", "configure discord", "configure telegram", "configure slack", "discord webhook", "telegram bot", "slack webhook"]

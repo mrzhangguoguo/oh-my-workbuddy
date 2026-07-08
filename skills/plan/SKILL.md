@@ -1,5 +1,8 @@
 ---
 name: plan
+category: planning
+status: active
+core: true
 description: "Strategic planning with optional interview, consensus (Planner→Architect→Critic), and review modes. Use to scope vague ideas, produce quality-gated work plans, or review an existing plan before implementation. Triggers: 'plan this', 'let's plan', 'ralplan', 'review this plan', 'plan --consensus', 'plan --review'."
 agent_created: true
 triggers: ["plan this", "let's plan", "ralplan", "review this plan", "plan --consensus"]
